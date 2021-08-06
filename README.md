@@ -16,3 +16,4 @@ Para la ejecución en modo desarrollo el comando:
 
 La aplicación se deplegará en el puerto 4200
 
+    localhost://4200
