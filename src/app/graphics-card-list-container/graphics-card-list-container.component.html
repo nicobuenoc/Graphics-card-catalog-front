@@ -1,0 +1,25 @@
+<div fxLayout="column">
+  <form [formGroup]="formFilter" fxLayout="column" fxLayoutAlign="center center">
+    <mat-form-field appearance="fill">
+      <mat-label>Search</mat-label>
+      <input
+        matInput
+        formControlName="filter"
+        autocomplete="false
+      "
+      />
+    </mat-form-field>
+  </form>
+
+  <div fxLayout="column" fxLayoutAlign="center center">
+    <pagination-controls (pageChange)="pageChanged($event)" class="text-center"></pagination-controls>
+  </div>
+
+  <div fxLayout="row wrap">
+    <app-graphics-card-list-element
+      *ngFor="let grephicCard of graphicsCardList$ | async | paginate: config; let i = index"
+      [graphicCard]="grephicCard"
+      [routerLink]="['/graphics-cards', grephicCard.id]"
+    ></app-graphics-card-list-element>
+  </div>
+</div>
