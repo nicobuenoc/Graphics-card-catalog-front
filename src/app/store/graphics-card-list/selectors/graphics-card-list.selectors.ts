@@ -6,3 +6,11 @@ const selectGraphicsCardList = createFeatureSelector<GraphicCard[]>('graphicsCar
 export const selectGraphicCard = createSelector(selectGraphicsCardList, (state: GraphicCard[], id: number) =>
   state?.find((graficCard) => graficCard.id === id)
 );
+
+export const graphicsCardListFilter = createSelector(selectGraphicsCardList, (state: GraphicCard[], filter: string) => {
+  if (filter) {
+    return state?.filter((graficCard) => graficCard.name.toLowerCase().includes(filter?.toLowerCase()));
+  } else {
+    return state;
+  }
+});

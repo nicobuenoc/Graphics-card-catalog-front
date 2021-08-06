@@ -7,9 +7,23 @@ import { MatCardModule } from '@angular/material/card';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { MatButtonModule } from '@angular/material/button';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 
 @NgModule({
-  imports: [CommonModule, GraphicsCardListContainerRoutingModule, MatCardModule, NgxPaginationModule, MatButtonModule, FlexLayoutModule],
+  imports: [
+    CommonModule,
+    GraphicsCardListContainerRoutingModule,
+    MatCardModule,
+    NgxPaginationModule,
+    MatButtonModule,
+    FlexLayoutModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatFormFieldModule,
+    MatInputModule
+  ],
   declarations: [GraphicsCardListContainerComponent, GraphicsCardListElementComponent]
 })
 export class GraphicsCardListContainerModule {}
