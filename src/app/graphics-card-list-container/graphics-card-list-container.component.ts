@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { tap } from 'rxjs/operators';
@@ -8,7 +8,8 @@ import { loadGraphicsCardList } from '../store/graphics-card-list/actions/graphi
 @Component({
   selector: 'app-graphics-card-list-container',
   templateUrl: './graphics-card-list-container.component.html',
-  styleUrls: ['./graphics-card-list-container.component.scss']
+  styleUrls: ['./graphics-card-list-container.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class GraphicsCardListContainerComponent implements OnInit {
   config: any;

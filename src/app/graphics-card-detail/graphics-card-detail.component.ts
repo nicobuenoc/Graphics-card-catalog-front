@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
@@ -8,7 +8,8 @@ import { selectGraphicCard } from '../store/graphics-card-list/selectors/graphic
 @Component({
   selector: 'app-graphics-card-detail',
   templateUrl: './graphics-card-detail.component.html',
-  styleUrls: ['./graphics-card-detail.component.scss']
+  styleUrls: ['./graphics-card-detail.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class GraphicsCardDetailComponent implements OnInit {
   grapichCard$: Observable<GraphicCard>;
