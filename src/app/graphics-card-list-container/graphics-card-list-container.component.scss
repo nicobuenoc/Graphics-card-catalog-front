@@ -1,0 +1,15 @@
+:host {
+  height: 100%;
+  width: 100%;
+
+  pagination-controls {
+    background-color: white;
+    border-radius: 8px;
+  }
+}
+
+:host::ng-deep {
+  .ngx-pagination {
+    padding-inline-start: 0px !important;
+  }
+}

@@ -1,3 +1,12 @@
-<p>
-  graphics-card-list-container works!
-</p>
+<div fxLayout="column">
+  <div fxLayout="column" fxLayoutAlign="center center">
+    <pagination-controls (pageChange)="pageChanged($event)" class="text-center"></pagination-controls>
+  </div>
+
+  <div fxLayout="row wrap">
+    <app-graphics-card-list-element
+      *ngFor="let grephicCard of graphicsCardList$ | async | paginate: config; let i = index"
+      [graphicCard]="grephicCard"
+    ></app-graphics-card-list-element>
+  </div>
+</div>
