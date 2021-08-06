@@ -6,10 +6,10 @@ import { GraphicCard } from '../../models/graphic-card.model';
 @Injectable({
   providedIn: 'root'
 })
-export class CardListService {
+export class GraphicsCardListService {
   constructor(private http: HttpClient) {}
 
-  getCardList() {
+  getGraphicsCardList() {
     return this.http.get<GraphicCard[]>(`${environment.api}/graphics-cards`);
   }
 }
