@@ -22,7 +22,6 @@ export class GraphicsCardListContainerComponent implements OnInit {
       currentPage: 1
     };
 
-    this.store.dispatch(loadGraphicsCardList());
     this.graphicsCardList$ = this.store
       .select('graphicsCardList')
       .pipe(tap((graphicsCardList) => (this.config.totalItems = graphicsCardList?.length)));
