@@ -1,0 +1,16 @@
+<div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="24px">
+  <mat-card *ngIf="grapichCard$ | async as graphicCard" fxLayout="row" fxLayout.lt-sm="column">
+    <img fxFlex="40" fxFlex.lt-sm="100" mat-card-image [src]="graphicCard.img" />
+
+    <div fxFlex="60" fxLayout="column">
+      <span class="title">{{ graphicCard.name }}</span>
+
+      <div fxLayout="column" fxLayoutGap="12px" fxLayoutAlign="center center">
+        <span class="info">price: {{ graphicCard.price | currency: 'EUR':true }}</span>
+        <span class="info">manufacture: {{ graphicCard.manufacture }}</span>
+      </div>
+    </div>
+  </mat-card>
+
+  <button mat-raised-button [routerLink]="['/graphics-cards']">RETURN</button>
+</div>
