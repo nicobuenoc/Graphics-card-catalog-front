@@ -1,4 +1,5 @@
 export interface GraphicCard {
+  id: string;
   name: string;
   img: string;
   manufacture: string;
