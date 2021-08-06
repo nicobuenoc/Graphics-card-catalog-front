@@ -3,9 +3,17 @@ import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
   {
-    path: '',
+    path: 'graphics-cards',
     loadChildren: () =>
       import(`./graphics-card-list-container/graphics-card-list-container.module`).then((m) => m.GraphicsCardListContainerModule)
+  },
+  {
+    path: 'graphics-cards/:id',
+    loadChildren: () => import(`./graphics-card-detail/graphics-card-detail.module`).then((m) => m.GraphicsCardDetailModule)
+  },
+  {
+    path: '**',
+    redirectTo: 'graphics-cards'
   }
 ];
 
